@@ -4,6 +4,8 @@
 -App will fetch data from static JSON file where as this can be moved to a remote location and can be
  fetched over the internet through REST API.
 -The json file is located in the assets folder. 
+- The banner image will be a random image from the set of images in the api response. This can also 
+be made set as a single image instead of a list in api response.
 -The field 'priority' in the json content inside each widget object is used to change the order of widget 
 in the home screen.
 -Landscape orientation is not handled.

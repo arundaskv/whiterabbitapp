@@ -22,6 +22,7 @@ import kotlinx.android.synthetic.main.layout_carousel_widget.view.*
 import kotlinx.android.synthetic.main.layout_not_defined_widget.view.*
 import kotlinx.android.synthetic.main.layout_product_widget.view.*
 import pl.pzienowicz.autoscrollviewpager.AutoScrollViewPager
+import kotlin.random.Random
 
 class WidgetListAdapter (var widgetItems : List<WidgetItem>, var context: Context?) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -68,7 +69,8 @@ class WidgetListAdapter (var widgetItems : List<WidgetItem>, var context: Contex
             VIEW_TYPE_BANNER->{
                 var viewHolder:BannerViewHolder = holder as BannerViewHolder
 
-                var url = widgetItems[position].items[1].url
+                val index = Random.nextInt(0,widgetItems[position].items.size)
+                var url = widgetItems[position].items[index].url
                 if (!TextUtils.isEmpty(url)) {
                         context?.let {
                             Glide.with(it)
@@ -84,7 +86,6 @@ class WidgetListAdapter (var widgetItems : List<WidgetItem>, var context: Contex
             VIEW_TYPE_CAROUSEL->{
                 var viewHolder:CarouselViewHolder = holder as CarouselViewHolder
                 viewHolder.viewPager.adapter = CarouselViewPagerAdapter(context,widgetItems[position].items)
-
                 viewHolder.viewPager.setInterval(3000)
                 viewHolder.viewPager.setDirection(AutoScrollViewPager.Direction.RIGHT)
                 viewHolder.viewPager.setCycle(true)
