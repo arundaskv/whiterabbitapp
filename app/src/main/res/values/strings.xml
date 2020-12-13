@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WhiteRabbitApp</string>
+    <string name="not_defined">Not Defined</string>
 </resources>
