@@ -5,7 +5,7 @@
   "widget": [
     {
       "type": "banner",
-      "priority": 1,
+      "priority": 2,
       "items": [
         {
           "id": "1",
@@ -39,7 +39,7 @@
     },
     {
       "type": "carousel",
-      "priority": 2,
+      "priority": 1,
       "items": [
         {
           "id": "1",

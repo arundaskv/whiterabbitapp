@@ -10,7 +10,7 @@ data class Page(
     @SerializedName("page_num")
     val pageNum: String,
     @SerializedName("widget")
-    val widget: List<WidgetItem>
+    var widget: List<WidgetItem>
 )
 
 
