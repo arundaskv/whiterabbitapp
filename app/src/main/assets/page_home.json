@@ -1,0 +1,125 @@
+{
+  "id": "home",
+  "title": "Home",
+  "page_num": "1",
+  "widget": [
+    {
+      "type": "banner",
+      "priority": 1,
+      "items": [
+        {
+          "id": "1",
+          "url": "https://tinyurl.com/y379jw6s"
+        },
+        {
+          "id": "2",
+          "url": "https://tinyurl.com/y3pjtea4"
+        },
+        {
+          "id": "3",
+          "url": "https://tinyurl.com/y2gersqn"
+        },
+        {
+          "id": "4",
+          "url": "https://tinyurl.com/y3c6ksu5"
+        },
+        {
+          "id": "5",
+          "url": "https://tinyurl.com/y4k2klen"
+        },
+        {
+          "id": "6",
+          "url": "https://tinyurl.com/y3pccdrc"
+        },
+        {
+          "id": "7",
+          "url": "https://tinyurl.com/y26fn9rm"
+        }
+      ]
+    },
+    {
+      "type": "carousel",
+      "priority": 2,
+      "items": [
+        {
+          "id": "1",
+          "url": "https://tinyurl.com/y3w8oaah"
+        },
+        {
+          "id": "2",
+          "url": "https://tinyurl.com/y4vaulog"
+        },
+        {
+          "id": "3",
+          "url": "https://tinyurl.com/y3j7rq6g"
+        },
+        {
+          "id": "4",
+          "url": "https://tinyurl.com/y28jpmyr"
+        },
+        {
+          "id": "5",
+          "url": "https://tinyurl.com/y2w7fbdo"
+        },
+        {
+          "id": "6",
+          "url": "https://tinyurl.com/yy2f6lha"
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "priority": 3,
+      "items": [
+        {
+          "id": "1",
+          "url": "https://tinyurl.com/y4f5e96j",
+          "title": "Men's Casuals",
+          "deal": "Min 50% off"
+        },
+        {
+          "id": "2",
+          "url": "https://tinyurl.com/y2szwrys",
+          "title": "Men's Formals",
+          "deal": "Min 50% off"
+        },
+        {
+          "id": "3",
+          "url": "https://tinyurl.com/y4bfj5b7",
+          "title": "Boy's T Shirts",
+          "deal": "Min 50% off"
+        },
+        {
+          "id": "4",
+          "url": "https://tinyurl.com/y44marw5",
+          "title": "Branded Shirts",
+          "deal": "Min 50% off"
+        },
+        {
+          "id": "5",
+          "url": "https://tinyurl.com/y4urobx8",
+          "title": "Ladies's Casuals",
+          "deal": "Min 50% off"
+        },
+        {
+          "id": "6",
+          "url": "https://tinyurl.com/y2yhf95n",
+          "title": "Girls Tops",
+          "deal": "Min 50% off"
+        },
+        {
+          "id": "7",
+          "url": "https://tinyurl.com/y5n467o3",
+          "title": "Girls Casuals",
+          "deal": "Min 50% off"
+        },
+        {
+          "id": "8",
+          "url": "https://tinyurl.com/yxupqdll",
+          "title": "Fancy Saree",
+          "deal": "Min 50% off"
+        }
+      ]
+    }
+  ]
+}
