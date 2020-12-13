@@ -1,10 +1,14 @@
 package com.whiterabbit.app.ui.main
 
 import android.content.Context
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.whiterabbit.app.R
 import com.whiterabbit.app.models.Page
 import com.whiterabbit.app.models.WidgetItem
@@ -17,8 +21,9 @@ import kotlinx.android.synthetic.main.layout_banner_widget.view.*
 import kotlinx.android.synthetic.main.layout_carousel_widget.view.*
 import kotlinx.android.synthetic.main.layout_not_defined_widget.view.*
 import kotlinx.android.synthetic.main.layout_product_widget.view.*
+import pl.pzienowicz.autoscrollviewpager.AutoScrollViewPager
 
-class WidgetListAdapter (private var widgetItems : List<WidgetItem>, private val context: Context?) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class WidgetListAdapter (var widgetItems : List<WidgetItem>, var context: Context?) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         when(viewType){
             VIEW_TYPE_BANNER ->{
@@ -62,11 +67,29 @@ class WidgetListAdapter (private var widgetItems : List<WidgetItem>, private val
         when(holder.itemViewType){
             VIEW_TYPE_BANNER->{
                 var viewHolder:BannerViewHolder = holder as BannerViewHolder
-                viewHolder.title.text = "Banner 1"
+
+                var url = widgetItems[position].items[1].url
+                if (!TextUtils.isEmpty(url)) {
+                        context?.let {
+                            Glide.with(it)
+                                .load(url)
+                                .apply(RequestOptions().centerCrop().placeholder(R.drawable.placeholder).error(R.drawable.placeholder))
+                                .into(viewHolder.banner_image)
+                        }
+                }else{
+                    viewHolder.banner_image.setImageResource(R.drawable.placeholder)
+                }
+
             }
             VIEW_TYPE_CAROUSEL->{
                 var viewHolder:CarouselViewHolder = holder as CarouselViewHolder
-                viewHolder.title.text = "Carousel 1"
+                viewHolder.viewPager.adapter = CarouselViewPagerAdapter(context,widgetItems[position].items)
+
+                viewHolder.viewPager.setInterval(3000)
+                viewHolder.viewPager.setDirection(AutoScrollViewPager.Direction.RIGHT)
+                viewHolder.viewPager.setCycle(true)
+                viewHolder.viewPager.startAutoScroll()
+                viewHolder.dots_indicator.setViewPager(viewHolder.viewPager)
             }
             VIEW_TYPE_PRODUCT->{
                 var viewHolder:ProductListViewHolder = holder as ProductListViewHolder
@@ -81,11 +104,12 @@ class WidgetListAdapter (private var widgetItems : List<WidgetItem>, private val
 
 
     class CarouselViewHolder(item: View) : RecyclerView.ViewHolder(item){
-        var title = item.carousel_title
+        var viewPager = item.viewPager
+        var dots_indicator = item.dots_indicator
     }
 
     class BannerViewHolder(item: View) : RecyclerView.ViewHolder(item){
-        var title = item.banner_title
+        var banner_image = item.banner_image
     }
     class ProductListViewHolder(item: View) : RecyclerView.ViewHolder(item){
         var title = item.product_title

@@ -12,7 +12,7 @@ in the home screen.
 ## Prerequisites
 
 Android Studio : 3.6.1
-Android SDK : 16 and 30
+Android SDK : 19 and 30
 Kotlin : 1.3.61
 Android SDK Build Tools : 29.0.3
 Android SDK Tool : 26.1.1
@@ -29,7 +29,7 @@ App developed with OnePlus 5 device, Android OS version 9
 
 2. Fetches the contents from static JSON file.
 
-3. Internet is not required to use the app.
+3. Internet is required to download the images used in the app.
 
 ## Dependencies used
 
