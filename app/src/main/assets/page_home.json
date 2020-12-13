@@ -5,7 +5,7 @@
   "widget": [
     {
       "type": "banner",
-      "priority": 1,
+      "priority": 3,
       "items": [
         {
           "id": "1",
@@ -39,7 +39,7 @@
     },
     {
       "type": "carousel",
-      "priority": 3,
+      "priority": 1,
       "items": [
         {
           "id": "1",
@@ -75,25 +75,25 @@
           "id": "1",
           "url": "https://tinyurl.com/y4f5e96j",
           "title": "Men's Casuals",
-          "deal": "Min 50% off"
+          "deal": "Min 20% off"
         },
         {
           "id": "2",
           "url": "https://tinyurl.com/y2szwrys",
           "title": "Men's Formals",
-          "deal": "Min 50% off"
+          "deal": "Min 40% off"
         },
         {
           "id": "3",
           "url": "https://tinyurl.com/y4bfj5b7",
           "title": "Boy's T Shirts",
-          "deal": "Min 50% off"
+          "deal": "Min 15% off"
         },
         {
           "id": "4",
           "url": "https://tinyurl.com/y44marw5",
           "title": "Branded Shirts",
-          "deal": "Min 50% off"
+          "deal": "Min 25% off"
         },
         {
           "id": "5",

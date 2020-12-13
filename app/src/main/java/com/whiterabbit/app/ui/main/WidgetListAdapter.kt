@@ -5,7 +5,7 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -94,7 +94,9 @@ class WidgetListAdapter (var widgetItems : List<WidgetItem>, var context: Contex
             }
             VIEW_TYPE_PRODUCT->{
                 var viewHolder:ProductListViewHolder = holder as ProductListViewHolder
-                viewHolder.title.text = "Product 1"
+                var layoutManager = GridLayoutManager(context,2)
+                viewHolder.productListRecyclerView.layoutManager = layoutManager
+                viewHolder.productListRecyclerView.adapter = ProductListAdapter(context,widgetItems[position].items)
             }
             VIEW_TYPE_NOT_DEFINED->{
                 var viewHolder:NotDefinedViewHolder = holder as NotDefinedViewHolder
@@ -113,7 +115,7 @@ class WidgetListAdapter (var widgetItems : List<WidgetItem>, var context: Contex
         var banner_image = item.banner_image
     }
     class ProductListViewHolder(item: View) : RecyclerView.ViewHolder(item){
-        var title = item.product_title
+        var productListRecyclerView = item.productListRecyclerView
     }
     class NotDefinedViewHolder(item: View) : RecyclerView.ViewHolder(item){
         var title = item.title
